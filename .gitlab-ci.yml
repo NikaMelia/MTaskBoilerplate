@@ -1,0 +1,13 @@
+stages:
+  - deploy_nuget
+
+  
+deploy_nuget_packages:
+  stage: deploy_nuget
+  image: mcr.microsoft.com/dotnet/sdk:7.0
+  script:
+    - export PackageVersion=7.0.1.$CI_PIPELINE_IID
+    - sh ./scripts/push-nuget.sh
+  only:
+    - main
+

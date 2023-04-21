@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\extensions\MTask.Extensions.Core\MTask.Extensions.Core.csproj" />
+      <ProjectReference Include="..\MTask.Boilerplate.EFCore\MTask.Boilerplate.EFCore.csproj" />
+    </ItemGroup>
+
+</Project>

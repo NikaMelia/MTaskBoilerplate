@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option csharp_namespace = "MTGames.Boilerplate.Api";
+
+import "google/protobuf/timestamp.proto";
+
+package boilerplate;
+
+service BoilerplateRpcService{
+  rpc GetFilm(GetFilmRequest) returns (GetFilmReply);
+}
+
+message GetFilmRequest{
+  string title=1;
+}
+
+message GetFilmReply{
+  string title=1;
+  string director=2;
+  string producer=3;
+  google.protobuf.Timestamp release_date=4;
+  repeated CharactersMessage characters=5;
+}
+
+message CharactersMessage{
+  GenderMessage gender=1;
+  string birthYear=2;
+  string height=3;
+  string name=4;
+}
+
+enum GenderMessage{
+  GENDER_MESSAGE_MALE = 0;
+  GENDER_MESSAGE_FEMALE = 1;
+}
